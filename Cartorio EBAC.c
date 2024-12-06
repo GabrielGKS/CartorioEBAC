@@ -94,7 +94,7 @@ int consulta()
 	}
 	
 	system("pause");
-	
+	fclose(file);
 
 }
 
@@ -108,15 +108,13 @@ int deletar()
 	remove(cpf);
 	
 	FILE *file;
-	file = fopen(cpf, "r");
+	file = fopen(cpf,"r");
 	
 	if(file == NULL)
 	{
 		printf(" Usuario não encontrado no sistema! \n");
 		system("pause");
 	}
-	
-
 }
 
 int main()
@@ -136,11 +134,11 @@ int main()
 		printf("Escolha a opção desejada do Menu:\n\n");
 		printf("\t1 - Registrar nomes.\n");
 		printf("\t2 - Consultar nomes.\n");
-		printf("\t3 - Deletar nomes.\n");
+		printf("\t3 - Deletar nomes.\n\n\n");
 		printf("\t4 - Sair do sistema.\n\n");
 		printf("Opção: "); //fim do menu
-	
-	
+		
+		
 		scanf("%d", &opcao); //armazenamento e escolha dos usuarios
 	
 		system("cls"); //Responsavel por limpar a tela
